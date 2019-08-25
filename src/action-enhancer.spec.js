@@ -101,6 +101,7 @@ describe('actionEnhancer', ()=>{
       expect.any(Object),
       expect.arrayContaining([ runAction ]),
     );
+    expect(store.state.section).not.toHaveProperty('actions');
   });
   it('should log schedule an action', ()=>{
     store.dispatch(scheduleAction);
@@ -124,6 +125,10 @@ describe('actionEnhancer', ()=>{
     store.dispatch(scheduleEmptyAction);
     expect(dispatch).toHaveBeenCalledWith(scheduleEmptyAction);
     expect(schedule).not.toHaveBeenCalled();
+  });
+  it('should not pass empty actions to section state', ()=>{
+    store.dispatch(scheduleEmptyAction);
+    expect(store.state.section).not.toHaveProperty('actions');
   });
   it('should not log an action without option', ()=>{
     createStoreWithEnchancer({ schedule });

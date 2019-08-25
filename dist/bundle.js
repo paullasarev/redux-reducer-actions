@@ -29,7 +29,7 @@ const createActionsEnhancer =
   const actionsReducer = reducer => (state, action) => {
     const result = reducer(state, action);
     lodash.each(result, (subState) => {
-      if (lodash.has(subState, 'actions') && lodash.isArray(subState.actions) && subState.actions.length) {
+      if (lodash.has(subState, 'actions') && lodash.isArray(subState.actions)) {
         actions.push(...subState.actions);
         delete subState.actions;
       }

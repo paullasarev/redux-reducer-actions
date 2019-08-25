@@ -25,7 +25,7 @@ export const createActionsEnhancer =
   const actionsReducer = reducer => (state, action) => {
     const result = reducer(state, action);
     each(result, (subState) => {
-      if (has(subState, 'actions') && isArray(subState.actions) && subState.actions.length) {
+      if (has(subState, 'actions') && isArray(subState.actions)) {
         actions.push(...subState.actions);
         delete subState.actions;
       }
