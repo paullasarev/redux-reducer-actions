@@ -10,19 +10,17 @@ function dispatchActions(store, actions) {
   }
 }
 
-function scheduleActions(store, type, log, schedule, actionsToRun) {
+function scheduleActions(store, type, log, schedule, actions) {
   if (log) {
-    log('run actions', type, actionsToRun);
+    log('schedule actions', type, actions);
   }
-  schedule( (actions) => {
-    dispatchActions(store, actions);
-  }, 0, actionsToRun);
+  schedule(dispatchActions, 0, store, actions);
 }
 
 const createActionsEnhancer = 
-(options = {}) => 
-nextCreateStore => 
-(reducer, initialState, enhancer) => {
+    (options = {}) => 
+    nextCreateStore => 
+    (reducer, initialState, enhancer) => {
   const { startActionType, log, schedule = setTimeout } = options;
   let actions = [];
   let isPending = !!startActionType;

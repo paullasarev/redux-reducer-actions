@@ -2,9 +2,9 @@ const { combineReducers } = require('redux');
 const { createActionsEnhancer } = require('../dist/bundle.js');
 
 describe('actionEnhancer', ()=>{
-  const schedule = jest.fn((func, delay, actions) => {
+  const schedule = jest.fn((func, delay, store, actions) => {
     // console.log('schedule', {func, delay, type, actions})
-    func(actions);
+    func(store, actions);
   });
   const log = jest.fn(/*console.log.bind(console)*/);
   let store;
@@ -98,6 +98,7 @@ describe('actionEnhancer', ()=>{
     expect(schedule).toHaveBeenCalledWith(
       expect.any(Function),
       0,
+      expect.any(Object),
       expect.arrayContaining([ runAction ]),
     );
   });
@@ -145,6 +146,7 @@ describe('actionEnhancer', ()=>{
     expect(schedule).toHaveBeenCalledWith(
       expect.any(Function),
       0,
+      expect.any(Object),
       expect.arrayContaining([ runAction ]),
     );
   });
