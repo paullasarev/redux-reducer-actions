@@ -3,13 +3,11 @@ const { createActionsEnhancer } = require('../dist/bundle.js');
 
 describe('actionEnhancer', ()=>{
   const schedule = jest.fn((func, delay, store, actions) => {
-    // console.log('schedule', {func, delay, type, actions})
     func(store, actions);
   });
   const log = jest.fn(/*console.log.bind(console)*/);
   let store;
   const dispatch = jest.fn((action) => {
-    // console.log('dispatch', action)
     store.state = store.reducer(store.state, action);
   });
   const nextEnhancer = {};
