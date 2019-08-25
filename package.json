@@ -1,0 +1,38 @@
+{
+  "name": "redux-reducer-actions",
+  "version": "1.0.0",
+  "description": "redux store enhancer which allows fire action in reducer",
+  "main": "dist/bundle.js",
+  "scripts": {
+    "build:dev": "rollup -c",
+    "build:prod": "rollup -c --environment BUILD:production",
+    "build:watch": "rollup -c --watch",
+    "build": "npm run build:prod",
+    "build:all": "npm run build:dev && npm run build:prod",
+    "test:watch": "jest --watch",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paullasarev/redux-reducer-actions.git"
+  },
+  "keywords": [
+    "redux",
+    "reducere",
+    "actions"
+  ],
+  "author": "paullasarev@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/paullasarev/redux-reducer-actions/issues"
+  },
+  "homepage": "https://github.com/paullasarev/redux-reducer-actions#readme",
+  "devDependencies": {
+    "jest": "^24.9.0",
+    "redux": "^4.0.4",
+    "rollup-plugin-terser": "^5.1.1"
+  },
+  "dependencies": {
+    "lodash": "^4.17.15"
+  }
+}
