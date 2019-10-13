@@ -1,22 +1,21 @@
 # redux-reducer-actions
-redux store enhancer which allows fire action in reducer
+**redux-reducer-actions** is a redux store enhancer which allows fire action in reducer
 
 Pavel Lasarev <paullasarev@gmail.com>
 
-Agenda
+Content
 * redux flow
 * redux-saga effects
 * redux-saga drawbacks
- * plumber code
- * unit testing is awful
+  * plumber code
+  * unit testing is awful
 * example task: load extra info from API
-* redux-saga  vs redux-reducer-actions
+  * redux-saga  vs redux-reducer-actions
 * redux-reducer-actions
-* reducer actions
-* attach to store
-* options
-* useful redux libs
-
+  * reducer actions
+  * attach to store
+  * options
+  * useful redux libs
 
 
 # Redux flow
