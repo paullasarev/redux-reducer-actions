@@ -65,6 +65,7 @@ The mental model is that a saga is like a separate thread in your application th
 
 ## Redux code (common)
 
+```
 // action creators
 export const GET_ITEM = 'GET_ITEM';
 export const GET_ITEM_SUCCESS = GET_ITEM_SUCCESS';
@@ -89,8 +90,7 @@ export const getFile = (id) => ({
      meta: { id },
   },
 })
-
-
+```
 
 ## redux-saga code
 
