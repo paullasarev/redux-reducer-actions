@@ -268,6 +268,18 @@ const actionEnchancer = createActionsEnhancer({ schedule: window.setTimeout });
 ## combine-section-reducers: Use root state
 
 ```
+import combineSectionReducers from 'combine-section-reducers';
+
+export rootReducer = 
+combineSectionReducers({
+  user,
+  item,
+  //...
+});
+
+```
+
+```
 // reducer
 export const reducer(state, action, rootState) {
   switch(action.type) {
@@ -291,15 +303,6 @@ export const reducer(state, action, rootState) {
        return state;
   }
 }
-import combineSectionReducers from 
-  'combine-section-reducers';
-
-export rootReducer = 
-combineSectionReducers({
-  user,
-  item,
-  //...
-});
 ```
 
 # Questions?
