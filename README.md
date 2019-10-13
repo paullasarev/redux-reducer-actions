@@ -198,16 +198,12 @@ define('reducer', ()=>{
     type: GET_ITEM_SUCCESS,
     payload: { fileId: 42 },
   }
-  it ('should fire GET_FILE on
-      GET_ITEM_SUCCESS', ()=> {
+  it ('should fire GET_FILE on GET_ITEM_SUCCESS', ()=> {
     const state = {};
     const newState = reducer(state, action);
     expect(state.actions).toBeDefined();
     expect(state.actions.length).toBe(1);
-    expect(state.actions[0].type)
-          .toBe(GET_FILE);
-    expect(state.actions[0].meta.id)
-          .toBe(42);
+    expect(state.actions[0]).toEqual(getFile(42));
   });
 });
 ```
