@@ -1,5 +1,5 @@
 # redux-reducer-actions
-**redux-reducer-actions** is a redux store enhancer which allows fire action in reducer
+**redux-reducer-actions** is a redux store enhancer which allows to fire action in reducer
 
 Pavel Lasarev <paullasarev@gmail.com>
 
