@@ -113,6 +113,9 @@ export const reducer(state, action) {
        return state;
   }
 }
+```
+
+```
 // effects
 
 export function* onGetItem(action) {
@@ -208,7 +211,9 @@ define('reducer', ()=>{
   });
 });
 ```
+
 ## redux-reducer-actions: attach to store
+
 ```
 // createStore
 const sagaMiddleware = createSagaMiddleware();
@@ -235,6 +240,7 @@ export default function configureStore() {
 ```
 
 ## redux-reducer-actions: options
+
 ```
 // log
 // log will be used to verbose procecced actions
@@ -250,7 +256,6 @@ const actionEnchancer = createActionsEnhancer({ startActionType: AUTH_SUCCESS })
 // default is window.setTimeout
 const actionEnchancer = createActionsEnhancer({ schedule: window.setTimeout });
 ```
-
 
 # Useful redux libs
 
