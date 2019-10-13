@@ -79,7 +79,7 @@ export const getItem = (id) => ({
 })
 
 export const GET_FILE = 'GET_FILE';
-export const GET_FILE = 'GET_FILE_SUCCESS';
+export const GET_FILE_SUCCESS = 'GET_FILE_SUCCESS';
 
 export const getFile = (id) => ({
   type: GET_FILE,
