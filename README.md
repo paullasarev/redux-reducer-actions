@@ -267,6 +267,7 @@ const actionEnchancer = createActionsEnhancer({ schedule: window.setTimeout });
 
 ## combine-section-reducers: Use root state
 
+```
 // reducer
 export const reducer(state, action, rootState) {
   switch(action.type) {
@@ -299,6 +300,7 @@ combineSectionReducers({
   item,
   //...
 });
+```
 
 # Questions?
 
