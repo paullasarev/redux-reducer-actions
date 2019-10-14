@@ -61,7 +61,7 @@ The mental model is that a saga is like a separate thread in your application th
 ```
 # redux-reducer-actions
 
-**redux-reducer-actions** is an Redux store ehcahcer which allows action generation in reducer. That approach allows to concentrate most logic in one place - reducer. 
+**redux-reducer-actions** is an Redux store enhancer which allows action generation in reducer. That approach allows to concentrate most logic in one place - reducer. 
 
 Due to that fact that reducers are pure functions, it is extremely easy to test this logic and keep code clean and concise.
 
