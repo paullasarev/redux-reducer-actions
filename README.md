@@ -59,6 +59,48 @@ The mental model is that a saga is like a separate thread in your application th
 +------------+        +------------+
 
 ```
+# redux-reducer-actions
+
+**redux-reducer-actions** is an Redux store ehcahcer which allows action generation in reducer. That approach allows to concentrate most logic in one place - reducer. 
+
+Due to that fact that reducers are pure functions, it is extremely easy to test this logic and keep code clean and concise.
+
+Actions, processed by **redux-reducer-actions** wouldn't go into the store. Rather they will be dispatched in the next event loop throw the standard Redux flow.
+
+# redux-reducer-actions flow
+
+```
+                                    +-------------------------------------------------------+
+                                    |                                                       |
+                                    |                                                       |
+                                    |                                                       |
++---------------+            +------v-------+                     newState: {               |
+|               |            |              |                        ...,                   |
+|   action      +------------>   reducer    +-----------------+      actions: [actions],    |
+|               |            |              |                 |   }                         |
++-------^-------+            +------^-------+                 |                             |
+        |                           |                         |                             |
+        |                           |             +-----------v-----------+                 |
+        |                           |             |                       |                 |
+        |                           |             |                       |                 |
+        |                           |             |    redux              |        +--------+---------+
+        |                           |             |    reducer            |        |                  |
+        |                           |             |    actions            |        | dispatch         |
+        |                           |             |                       +--------> actions          |
+        |                           |             |    enhancer           |        | in new event loop|
+        |                           |             |                       |        |                  |
+        |                           |             |                       |        +------------------+
+        |                           |             |                       |
+        |                           |             +-----------+-----------+
+        |                           |                         |
+        |                           |                         |
++-------+---------+         +-------+-------+                 |    newState: {
+|                 |         |               |                 |       ...,
+|    UI           <---------+   store       +<----------------+    }
+|                 |         |               |
++-----------------+         +---------------+
+
+```
 
 # example task: load extra info from API
 
