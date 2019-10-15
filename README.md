@@ -1,5 +1,5 @@
 # redux-reducer-actions
-**redux-reducer-actions** Redux-reducer-actions is an Redux store enhancer which allows action generation in reducer. It is quite useful to concentrate most of logic in reducer rather than split it to effects.
+**Redux-reducer-actions** is a Redux store enhancer which allows action generation in reducer. It is quite useful to concentrate most of logic in reducer rather than split it to effects.
 You can use this library in your project to avoid verbose plumber code and make it clean and testable.
 
 Pavel Lasarev <paullasarev@gmail.com>
