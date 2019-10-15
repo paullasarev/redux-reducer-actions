@@ -167,12 +167,12 @@ export function* onGetItem(action) {
 }
 
 export function* itemSaga() {
-  takeEvery(GET_ITEM_SUCCESS, onGetItem);
+  yield takeEvery(GET_ITEM_SUCCESS, onGetItem);
 }
 
 // root saga
 export function* rootSaga() {
-  spawn(itemSaga);
+  yield spawn(itemSaga);
 }
 ```
 
